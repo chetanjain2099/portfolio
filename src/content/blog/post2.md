@@ -1,16 +1,43 @@
 ---
-title: "Demo Post 2"
-description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 11 2022"
-heroImage: "/post_img.webp"
+title: "Create a portable Python installation (Windows)"
+description: "Step-by-step instructions on how to install python and set it up for easy portability."
+pubDate: "June 25 2022"
+heroImage: "/python-conda.webp"
+tags: [ "python" ]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+Python is a popular general-purpose programming language. It is a great first language as it's easy to read and code. It
+can be used in web development, machine learning, data science, software development and many more things.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+#### There are many advantages to having a portable Python version over installing one:
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+- It is possible to run multiple Python versions at the same time without causing conflict.
+- It is easy to delete if you no longer need it.
+- There are no changes made to the system files, registry, or environment variables.
+- It can be easily synchronised with everyone if it's committed on SVN, without everyone having to install the libraries
+  and the correct version.
+- Easy to use on any PC, just copy it to a Pen drive and you're good to go.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+## Downloading & Installing Python
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+To install portable python first, we will download Miniconda on the PC. It can be downloaded from the below link (choose
+whichever python version you want to install).
+<a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">https://docs.conda.io/en/latest/miniconda.html#windows-installers</a>
+After downloading move the exe file to the directory where you want to install python. Now, open Command Prompt in the
+current location. This can be opened by pressing <kbd>Alt + D</kbd> then type <kbd>cmd</kbd> and press enter.
+Then type the below code on the Command Prompt window.
+<code>Miniconda3-py38_4.12.0-Windows-x86_64.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0 /NoRegistry=1 /S
+/D=%~dp0Python38</code>
+Replace <code>Miniconda3-py38_4.12.0-Windows-x86_64</code> with the file name that you downloaded and <code>
+Python38</code> with the folder name where you want to install Python and run the code by pressing enter.
+This will install Python in the Python38 folder in my case or whatever folder name you have given.
+
+## Creating batch file
+
+Now we will create a batch file to access python with the correct path. First, open the folder where you installed the
+Python as in my case it was Python38. then create a new batch file named <code>python.bat</code>. Then open the file in
+notepad and copy the lines below.
+<code>start cmd.exe /k "set PATH=%CD%;%CD%\Library\bin;%CD%\Library;%CD%\Scripts;C:\Windows\System32"</code>
+This will open a Command Prompt window with the python path set up correctly. You can use conda or pip to install any
+package and use python here directly.
+You can create a shortcut to the batch file anywhere and access python from it.

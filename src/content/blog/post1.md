@@ -1,56 +1,54 @@
 ---
-title: "Demo Post 1"
+title: "Set up Portable MinGW (GCC) compiler with CMake"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-pubDate: "Sep 10 2022"
-heroImage: "/post_img.webp"
-tags: ["tokio"]
+pubDate: "August 29 2022"
+heroImage: "/mingw.webp"
+tags: [ "cmake" ]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer
-malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas
-pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse
-platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada
-fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea
-dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst
-quisque sagittis purus sit amet.
+MinGW is a native Windows port of the GNU Compiler Collection (GCC), with freely distributable import libraries and
+header files that are used for building native Windows applications, building libraries.
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum
-quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet.
-Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus.
-Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit
-ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt
-dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus
-arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed
-tempus urna et pharetra pharetra massa massa ultricies mi.
+The CMake software is a free, cross-platform, open-source tool that automates build processes, tests, packages, and
+installs software using a compiler-independent architecture.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam
-sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec.
-Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna
-fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et
-egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel
-turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra
-nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim
-praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus
-egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam
-ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor
-purus non. Amet dictum sit amet justo donec enim.
+MSYS is a collection of tools and libraries providing you with an easy-to-use environment for building, installing and
+running native Windows software.
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut
-consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra.
-Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor
-dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor
-dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque
-eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices
-tincidunt arcu. Id cursus metus aliquam eleifend mi.
+There are many advantages to having a portable Python version over installing one:
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus
-imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu
-cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt
-dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat
-sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida.
-Egestas integer eget aliquet nibh praesent tristique magna.
+    – It is easy to delete if you no longer need it. Just delete the folder.
+
+    – There are no changes made to the system files, registry, or environment variables.
+
+    – It is easy to use on any PC, just copy it to a Pendrive and you’re good to go.
+
+The easiest way to install it is using the link below. The installer on the link contains MinGW with GCC extra libraries
+that are commonly used (like boost, make) in one single exe file but it does not contain CMake and MSYS, so we will add
+those later.
+
+## Setting up MinGW (GCC) compiler
+Download the latest available MinGW exe file from the link https://nuwen.net/mingw.html
+
+The current latest version exe file is mingw-18.0.exe
+
+Download and open the exe file (which is basically a zip file). It will ask you for a location to extract the file. Once
+you specify a path and click on extract it will extract all the files in that location.
+
+After extracting there will be two batch files inside the folder. That will be helpful in setting up the path in the command prompt (CMD).
+
+There are two ways to set up the path, first is open the command prompt and run the set_distro_paths.bat file and the second option is by directly clicking on the open_distro_window.bat file which will directly open the command prompt with all the correct paths set up already.
+
+
+
+## Setting up CMake
+
+
+Download the latest CMake zip file (Windows x64 ZIP) from the official link https://cmake.org/download/
+The current latest version exe file is cmake-3.24.1-windows-x86_64.zip
+After downloading the zip file extract all the files into a temporary directory. Create an empty folder named cmake in the MinGW folder that we previously created then copy all the files from inside the extracted folder to the cmake folder we created in the MinGW folder. As shown in the image below.
+The content inside the cmake folder is shown in the below image.
+
+## Update the batch file
+After setting up CMake, now we will have to update the set_distro_paths.bat file so it knows where to find the CMake files. Open the batch file in a text editor and replace the line set PATH=%~dp0bin;%PATH% with set PATH=%~dp0bin;%~dp0cmake\bin;%PATH% then save the file.
+This is all you need to do to install and set up MinGW (GCC compiler) with CMake.
