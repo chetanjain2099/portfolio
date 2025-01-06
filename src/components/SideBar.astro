@@ -2,8 +2,9 @@
 import SideBarFooter from "./SideBarFooter.astro";
 import {Image} from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
-const {sideBarActiveItemID} = Astro.props;
+const {sideBarActiveItemID = null} = Astro.props;
 import myImage from './profile.png';
+const activeClass = "bg-base-300";
 ---
 
 <div class="drawer-side z-40">
@@ -22,3 +23,7 @@ import myImage from './profile.png';
         <SideBarFooter/>
     </aside>
 </div>
+<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
+    const activeItemElem = document.getElementById(sideBarActiveItemID);
+    activeItemElem && activeItemElem.classList.add(activeClass);
+</script>
