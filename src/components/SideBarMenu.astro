@@ -4,30 +4,14 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
 ---
 
 <ul class="menu grow shrink menu-md overflow-y-auto">
-    <li>
-        <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-            Home </a>
-    </li>
-    <li>
-        <a href="/blog/"
-           class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-            Blog </a>
-    </li>
-    <li>
-        <a href="/cv/"
-           class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">
-            CV </a>
-    </li>
-    <li>
-        <a class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-           href="mailto:chetanjain2099@gmail.com"
-           target="_blank"
-           referrerpolicy="no-referrer-when-downgrade">
-            Contact </a>
-    </li>
+    <li><a href="/" class="rounded-md px-3 py-2 text-lg font-medium"> Home </a></li>
+    <li><a href="/blog/" class="rounded-md px-3 py-2 text-lg font-medium"> Blog </a></li>
+    <li><a href="/cv/" class="rounded-md px-3 py-2 text-lg font-medium"> CV </a></li>
+    <li><a class="rounded-md px-3 py-2 text-lg font-medium" href="mailto:chetanjain2099@gmail.com"
+           target="_blank" referrerpolicy="no-referrer-when-downgrade"> Contact </a></li>
 </ul>
 
-<script define:vars={{sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass}}>
+<script>
     const activeItemElem = document.getElementById(sideBarActiveItemID);
     activeItemElem && activeItemElem.classList.add(activeClass);
 </script>

@@ -3,7 +3,7 @@ title: "Create a portable Python installation (Windows)"
 description: "Step-by-step instructions on how to install python and set it up for easy portability."
 pubDate: "June 25 2022"
 heroImage: "/python-conda.webp"
-tags: [ "python" ]
+tags: ["python", "conda", "portable"]
 ---
 
 Python is a popular general-purpose programming language. It is a great first language as it's easy to read and code. It

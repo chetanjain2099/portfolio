@@ -12,66 +12,35 @@ const last_posts = posts.slice(0, 3);
 <BaseLayout sideBarActiveItemID="home">
     <div class="pb-12 mt-5">
         <div class="text-xl py-1">Hey there 👋</div>
-        <div class="text-5xl font-bold">I'm Chetan Kumar Jain</div>
-        <div class="text-3xl py-3 font-bold">Software Engineer</div>
+        <div class="text-4xl font-bold">I'm Chetan Kumar Jain</div>
+        <div class="text-2xl py-3 font-bold"><em>Software Engineer</em></div>
         <div class="py-2">
             <text class="text-lg">
-            I am an experienced Software Engineer with a background in the machinery industry. I completed my Bachelor
-            of Technology (BTech) degree from the Kalinga Institute of Industrial Technology focused on information
-            technology. Skilled in Python, Java, C, C++ and MySQL.
+                I am an experienced Software Engineer with a background in the machinery industry. I completed my
+                Bachelor of Technology (BTech) degree from the Kalinga Institute of Industrial Technology focused on
+                information technology. Skilled in Python, Java, C, C++ and MySQL.
             </text>
         </div>
         <div class="mt-8">
-            <button type="button" class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                <a href="" target="_blank"> Let's connect!</a>
+            <button type="button"
+                    class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                <a href="https://www.linkedin.com/in/chetanjain2099/" target="_blank"> Let's connect!</a>
             </button>
         </div>
     </div>
-
-    <!--<div>-->
-    <!--  <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>-->
-    <!--</div>-->
-
-    <!--<HorizontalCard-->
-    <!--  title="Demo Project 1"-->
-    <!--  img="/post_img.webp"-->
-    <!--  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."-->
-    <!--  url="#"-->
-    <!--  badge="NEW"-->
-    <!--/>-->
-    <!--<div class="divider my-0"></div>-->
-    <!--<HorizontalCard-->
-    <!--  title="Demo Project 2"-->
-    <!--  img="/post_img.webp"-->
-    <!--  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."-->
-    <!--  url="#"-->
-    <!--/>-->
-    <!--<div class="divider my-0"></div>-->
-    <!--<HorizontalCard-->
-    <!--  title="Demo Project 3"-->
-    <!--  img="/post_img.webp"-->
-    <!--  desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."-->
-    <!--  url="#"-->
-    <!--  badge="FOSS"-->
-    <!--/>-->
-
     <div>
-      <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+        <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
     </div>
 
     {
-      last_posts.map((post) => (
-        <>
-          <HorizontalCard
-            title={post.data.title}
-            img={post.data.heroImage}
-            desc={post.data.description}
-            url={"/blog/" + createSlug(post.data.title, post.slug)}
-            target="_self"
-            badge={post.data.badge}
-          />
-          <div class="divider my-0" />
-        </>
-      ))
+        last_posts.map((post) => (
+                <HorizontalCard title={post.data.title}
+                                img={post.data.heroImage}
+                                desc={post.data.description}
+                                url={"/blog/" + createSlug(post.data.title, post.slug)}
+                                target="_self"
+                                badge={post.data.badge}/>
+                <div class="divider my-0"/>
+        ))
     }
 </BaseLayout>
