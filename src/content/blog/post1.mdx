@@ -1,0 +1,98 @@
+---
+title: "Set up Portable MinGW (GCC) compiler with CMake"
+description: "A complete guide which contains step-by-step instructions to install and set up a portable MinGW (GCC) compiler with CMake."
+pubDate: "August 29 2022"
+heroImage: "/mingw.webp"
+tags: ["portable", "MinGW", "portable MinGW", "GCC", "GCC Compiler", "CMake", "Compiler"]
+---
+import {Image} from "astro:assets";
+import mingw_extract_location from './mingw_extract_location.webp';
+import mingw_extracted_files from './mingw_extracted_files.webp';
+import mingw_extracted_files_with_cmake from './mingw_extracted_files_with_cmake.webp';
+import cmake_files from './cmake_files.webp';
+
+**MinGW** (Minimalist GNU for Windows) is a native Windows port of the GNU Compiler Collection (GCC). It includes freely
+distributable import libraries and header files used for building native Windows applications and libraries.
+
+**CMake** is a free, cross-platform, open-source tool that automates build processes, testing, packaging, and
+software installation using a compiler-independent architecture.
+
+**MSYS** is a collection of tools and libraries that provides an easy-to-use environment for building, installing, and
+running native Windows software.
+
+### Why Use a Portable MinGW Installation?
+
+A portable installation offers several advantages over a traditional installation:
+
+    - **Easy removal**: Simply delete the folder when no longer needed.
+    - **No system changes**: Avoid modifying system files, the registry, or environment variables.
+    - **Flexibility**: Copy the installation to a USB drive and use it on any PC.
+
+### Installing MinGW (GCC)
+
+1. Download MinGW:
+
+    Download the latest version of MinGW from the [official MinGW page](https://nuwen.net/mingw.html). The current
+    version is `mingw-18.0.exe`.
+
+2. Extract the Files:
+
+    - Open the downloaded .exe file (essentially a self-extracting ZIP file).
+    - Choose a location for extraction and click Extract.
+        <Image width={386} src={mingw_extract_location} alt="MinGW Extract Location"/>
+    - The files will be extracted to the specified location.
+        <Image src={mingw_extracted_files} alt="MinGW Extracted Files"/>
+
+3. Locate the Batch Files:
+
+    Inside the extracted folder, you’ll find two batch files:
+
+    - `set_distro_paths.bat`: Use this to set up the paths in an existing Command Prompt session.
+    - `open_distro_window.bat`: Use this to open a new Command Prompt session with the paths pre-configured.
+
+### Adding CMake
+
+1. **Download CMake**:
+
+    Download the latest version of CMake (Windows x64 ZIP) from the [CMake download page](https://cmake.org/download/).
+    The current version is `cmake-3.24.1-windows-x86_64.zip`.
+
+2. **Extract CMake Files**:
+
+    - Extract the ZIP file to a temporary directory.
+    - Create a new folder named `cmake` inside your MinGW installation folder.
+    - Copy all files from the extracted CMake folder into the `cmake` folder you just created.
+        <Image src={mingw_extracted_files_with_cmake} alt="MinGW Extracted Files with CMake"/>
+
+3. Verify the CMake Directory:
+
+    The contents of the `cmake` folder should look like this:
+
+    <Image width={386} src={cmake_files} alt="CMake Files"/>
+
+
+### Updating the Batch File
+
+To ensure the paths for CMake are correctly configured, update the `set_distro_paths.bat` file:
+
+1. **Open the Batch File**:
+
+    Open `set_distro_paths.bat` in a text editor.
+
+2. **Modify the PATH Variable**:
+
+    Locate the line:
+    ```
+    set PATH=%~dp0bin;%PATH%
+    ```
+    Replace it with:
+    ```
+    set PATH=%~dp0bin;%~dp0cmake\bin;%PATH%
+    ```
+3. Save the File:
+
+    Save your changes and close the editor.
+
+### Final Steps
+You’re all set! Use the `open_distro_window.bat` file to launch a Command Prompt with the MinGW and CMake paths configured.
+You can now build projects using the GCC compiler and CMake without modifying your system settings.

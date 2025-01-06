@@ -1,0 +1,73 @@
+---
+title: "Create a portable Python installation (Windows)"
+description: "Step-by-step instructions on how to install python and set it up for easy portability."
+pubDate: "June 25 2022"
+heroImage: "/python-conda.webp"
+tags: ["python", "conda", "portable"]
+---
+
+Python is a popular, general-purpose programming language that is easy to read and code, making it an excellent choice
+for beginners. It is widely used in fields like web development, machine learning, data science, and software development.
+
+Having a portable Python installation offers several advantages over a traditional installation:
+- Run multiple Python versions simultaneously without conflicts.
+- Easily remove the installation when it’s no longer needed.
+- Avoid changes to system files, the registry, or environment variables.
+- Synchronize the installation across devices or teams via version control systems (e.g., SVN).
+- Use Python on any PC—just copy the installation to a USB drive and go!
+
+### Downloading & Installing Python
+
+To set up a portable Python installation, we’ll use Miniconda. Follow these steps:
+1. Download Miniconda:
+
+    Visit the <a href="https://docs.conda.io/en/latest/miniconda.html#windows-installers">Miniconda Windows installers page</a>
+    and download the installer for your desired Python version.
+2. Move the Installer:
+
+    Place the downloaded `.exe` file in the directory where you want to install Python.
+3. Open Command Prompt:
+
+    - Navigate to the installation directory in File Explorer.
+    - Press `Alt + D`, type `cmd`, and press Enter.
+    - Alternatively, on Windows 11, right-click in the folder and select **Open in Terminal**.
+4. Run the Installer:
+
+    Enter the following command in the Command Prompt, replacing the placeholder names with your specific file and folder names:
+    ```
+    Miniconda3-py38_4.12.0-Windows-x86_64.exe /InstallationType=JustMe /AddToPath=0 /RegisterPython=0
+    /NoRegistry=1 /S /D=%~dp0Python38
+    ```
+    - Replace `Miniconda3-py38_4.12.0-Windows-x86_64` with the name of the downloaded installer.
+    - Replace `Python38` with your desired folder name.
+
+    Press Enter to execute the command. Miniconda will install Python into the specified folder (e.g., Python38).
+
+
+### Creating batch file
+
+To make it easy to access Python with the correct paths, create a batch file:
+
+1. Navigate to the Installation Folder:
+
+    Open the folder where you installed Python (e.g., `Python38`).
+
+2. Create a Batch File:
+
+    - Right-click in the folder and select **New > Text Document.**
+    - Rename the file to `python.bat`.
+
+3. Edit the Batch File:
+
+    Open the `python.bat` file in a text editor (e.g., Notepad) and paste the following line:
+    ```
+    start cmd.exe /k "set PATH=%CD%;%CD%\Library\bin;%CD%\Library;%CD%\Scripts;C:\Windows\System32"
+    ```
+    Save and close the file.
+
+
+Now, double-click `python.bat` to open a Command Prompt window with the Python environment set up. You can use `conda` or
+`pip` to install packages and start using Python immediately.
+
+### Optional: Create a Shortcut
+For quick access, create a shortcut to the `python.bat` file and place it on your desktop or in your Start menu.
