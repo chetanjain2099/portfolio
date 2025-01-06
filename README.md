@@ -1,6 +1,7 @@
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fchetanjain.co.in)
 
-# www.chetanjain.co.in - My personal website, blog and more
+# My personal website, blog and more
+## www.chetanjain.co.in 
 
 I have created my website using the Template Astofy which is build using Astro and TailwindCSS.
 
