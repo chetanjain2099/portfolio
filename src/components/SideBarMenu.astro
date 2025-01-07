@@ -29,13 +29,14 @@ const activeClass = "bg-base-300"; // For primary color replace with `active` cl
            target="_blank" referrerpolicy="no-referrer-when-downgrade">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
              style="fill: currentColor;">
-            <path d="M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z"></path>
+            <path d="M20 4H6c-1.103 0-2 .897-2 2v5h2V8l6.4 4.8a1.001 1.001 0 0 0 1.2 0L20 8v9h-8v2h8c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm-7 6.75L6.666 6h12.668L13 10.75z"></path>
+            <path d="M2 12h7v2H2zm2 3h6v2H4zm3 3h4v2H7z"></path>
         </svg>
         Contact
     </a></li>
 </ul>
 
-<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
+<script define:vars={{sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass}}>
     const activeItemElem = document.getElementById(sideBarActiveItemID);
     activeItemElem && activeItemElem.classList.add(activeClass);
 </script>
