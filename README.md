@@ -1,14 +1,23 @@
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fchetanjain.co.in)
+# Portfolio Website
 
-# www.chetanjain.co.in - My personal website, blog and more
+Welcome to the repository for my personal website, [chetanjain.co.in](https://www.chetanjain.co.in). This site serves as my digital portfolio, blog posts, and more.
 
-I have created my website using the Template Astofy which is build using Astro and TailwindCSS.
+## About
 
-It took a while, but eventually I had the time to rebuild my website!
+This website was built using the [Astofy](https://astro.build/themes/details/astrofy-personal-porfolio-website-template/) template, which leverages [Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com/) to create a fast, responsive, and aesthetically pleasing user experience. The site includes sections for my personal projects, a blog, and contact information.
 
-## Tech stack
+## Features
 
-- [Astro](https://astro.build/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Astofy](https://astro.build/themes/details/astrofy-personal-porfolio-website-template/)
-- See a list of modules used in the [package.json](package.json) file
+- **Responsive Design**: Optimized for various screen sizes and devices.
+- **Fast Loading**: Built with performance in mind to ensure quick load times.
+- **Easy Navigation**: Intuitive layout with clear sections for projects, blog posts, and contact information.
+- **SEO Optimized**: Structured to improve search engine visibility.
+
+## Tech Stack
+
+- **Astro**: A modern framework for building fast websites.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **JavaScript**: Enhancing interactivity and functionality.
+- **Markdown**: Used for writing blog posts.
+
+For a complete list of dependencies, refer to the `package.json` file.
