@@ -24,4 +24,4 @@ For a complete list of dependencies, refer to the `package.json` file.
 
 ## Hosting Details
 
-I have successfully hosted this portfolio website on **Cloudflare Pages**. Cloudflare Pages offers an efficient, scalable, and fast solution for hosting static websites.
+I have successfully hosted this portfolio website on **Cloudflare Pages** which offers an efficient, scalable, and fast solution for hosting static websites.
