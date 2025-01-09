@@ -21,3 +21,7 @@ This website was built using the [Astofy](https://astro.build/themes/details/ast
 - **Markdown**: Used for writing blog posts.
 
 For a complete list of dependencies, refer to the `package.json` file.
+
+## Hosting Details
+
+I have successfully hosted this portfolio website on **Cloudflare Pages**. Cloudflare Pages offers an efficient, scalable, and fast solution for hosting static websites.
