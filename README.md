@@ -1,6 +1,6 @@
 # Portfolio Website
 
-Welcome to the repository for my personal website, [chetanjain.co.in](https://www.chetanjain.co.in). This site serves as my digital portfolio, blog posts, and more.
+Welcome to the repository for my personal website, [chetanjain.co.in](https://chetanjain.co.in). This site serves as my digital portfolio, blog posts, and more.
 
 ## About
 
